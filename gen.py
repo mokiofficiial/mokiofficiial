@@ -41,7 +41,16 @@ V #...# #...# #...# .#.#. ..#..
 W #...# #...# #.#.# ##.## #...#
 X #...# .#.#. ..#.. .#.#. #...#
 Y #...# .#.#. ..#.. ..#.. ..#..
+0 .###. #..## #.#.# ##..# .###.
+1 ..#.. .##.. ..#.. ..#.. .###.
+2 ####. ....# .###. #.... #####
 3 ####. ....# .###. ....# ####.
+4 #...# #...# ##### ....# ....#
+5 ##### #.... ####. ....# ####.
+6 .###. #.... ####. #...# .###.
+7 ##### ....# ...#. ..#.. ..#..
+8 .###. #...# .###. #...# .###.
+9 .###. #...# .#### ....# .###.
 . ..... ..... ..... ..... ..#..
 """
 FONT = {}
@@ -239,21 +248,81 @@ def footer():
     open(os.path.join(A, "footer.svg"), "w", encoding="utf-8").write(svg)
 
 
-banner()
-card("chess3d", "CHESS 3D", "knight",
-     ["3D chess in your browser: 14 bots,", "a capture animation for every piece."],
-     "THREE.JS  ·  JAVASCRIPT", RED)
-card("pixel-icons", "PIXEL ICONS", "pack",
-     ["Pixel-style icon pack for Android.", "Makes new icons from an app's own icon."],
-     "ANDROID  ·  PYTHON", BROWN)
-card("moki-ui", "MOKI UI", "sparkle",
-     ["40 animated React components:", "buttons, glass forms, cards, widgets."],
-     "REACT  ·  TYPESCRIPT  ·  ANIME.JS", BROWN)
-card("meow-music", "MEOW MUSIC", "music",
-     ["Landing page for Meow Music,", "a music app for Android."],
-     "HTML  ·  CSS", RED)
-card("student-notes", "STUDENT NOTES", "notes",
-     ["Website for Student Notes,", "the Android app for students."],
-     "HTML  ·  CSS", RED)
-footer()
-print("assets written:", sorted(os.listdir(A)))
+def button(slug, glyph, label, handle, accent):
+    W, H = 360, 76
+    t, _ = text_blocks(label, 82, 16, 3, INK)
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{label} {handle}">
+<rect width="{W}" height="{H}" fill="{CREAM}"/>
+<rect x="2" y="2" width="{W - 4}" height="{H - 4}" fill="none" stroke="{INK}" stroke-width="4"/>
+<rect x="4" y="4" width="62" height="{H - 8}" fill="{YELLOW}"/>
+<line x1="66" y1="4" x2="66" y2="{H - 4}" stroke="{INK}" stroke-width="2"/>
+{blocks(art(GLYPHS[glyph]), 13, 16, 4, accent)}
+{t}
+<text x="82" y="58" fill="{MUTED}" font-family="{MONO}" font-size="14">{handle}</text>
+</svg>'''
+    open(os.path.join(A, f"btn-{slug}.svg"), "w", encoding="utf-8").write(svg)
+
+
+GLYPHS["linkedin"] = """
+..#######..
+.#.......#.
+#.........#
+#..#......#
+#.........#
+#..#.###..#
+#..#.#..#.#
+#..#.#..#.#
+#..#.#..#.#
+.#.......#.
+..#######..
+"""
+GLYPHS["insta"] = """
+..#######..
+.#.......#.
+#.......#.#
+#...###...#
+#..#...#..#
+#..#...#..#
+#..#...#..#
+#...###...#
+#.........#
+.#.......#.
+..#######..
+"""
+GLYPHS["threads"] = """
+...#####...
+.##.....##.
+#.........#
+#...###.#.#
+#..#...##.#
+#..#....#.#
+#..#...##.#
+#...###.##.
+#..........
+.##.....#..
+...#####...
+"""
+
+
+if __name__ == "__main__":
+    banner()
+    button("linkedin", "linkedin", "LINKEDIN", "moki-officiial", INK)
+    button("instagram", "insta", "INSTAGRAM", "@moki._.officials", INK)
+    button("threads", "threads", "THREADS", "@moki._.officials", INK)
+    card("chess3d", "CHESS 3D", "knight",
+         ["3D chess in your browser: 14 bots,", "a capture animation for every piece."],
+         "THREE.JS  ·  JAVASCRIPT", RED)
+    card("pixel-icons", "PIXEL ICONS", "pack",
+         ["Pixel-style icon pack for Android.", "Makes new icons from an app's own icon."],
+         "ANDROID  ·  PYTHON", BROWN)
+    card("moki-ui", "MOKI UI", "sparkle",
+         ["40 animated React components:", "buttons, glass forms, cards, widgets."],
+         "REACT  ·  TYPESCRIPT  ·  ANIME.JS", BROWN)
+    card("meow-music", "MEOW MUSIC", "music",
+         ["Landing page for Meow Music,", "a music app for Android."],
+         "HTML  ·  CSS", RED)
+    card("student-notes", "STUDENT NOTES", "notes",
+         ["Website for Student Notes,", "the Android app for students."],
+         "HTML  ·  CSS", RED)
+    footer()
+    print("assets written:", sorted(os.listdir(A)))

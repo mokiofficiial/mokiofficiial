@@ -8,6 +8,10 @@
   3D in the browser, animated UI, pixel art and small apps people actually use.
 </p>
 
+<p align="center">
+  <img src="assets/moki-says.svg" width="100%" alt="Moki says">
+</p>
+
 <br>
 
 ### 🍓 Things I made
@@ -41,6 +45,28 @@
   <img src="https://img.shields.io/badge/Node.js-141414?style=for-the-badge&logo=nodedotjs&logoColor=ecb61e" alt="Node.js">
   <img src="https://img.shields.io/badge/Python-141414?style=for-the-badge&logo=python&logoColor=ecb61e" alt="Python">
   <img src="https://img.shields.io/badge/Vercel-141414?style=for-the-badge&logo=vercel&logoColor=ecb61e" alt="Vercel">
+</p>
+
+<br>
+
+### 📊 Moki stats
+
+<p align="center">
+  <img src="assets/stats.svg" width="100%" alt="Moki stats: public repos, stars, followers and top languages">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mokiofficiial/mokiofficiial/output/snake.svg" width="100%" alt="Contribution snake">
+</p>
+
+<br>
+
+### 💌 Say hi
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/moki-officiial-570076444"><img src="assets/btn-linkedin.svg" width="32%" alt="LinkedIn"></a>
+  <a href="https://www.instagram.com/moki._.officials/"><img src="assets/btn-instagram.svg" width="32%" alt="Instagram"></a>
+  <a href="https://www.threads.com/@moki._.officials"><img src="assets/btn-threads.svg" width="32%" alt="Threads"></a>
 </p>
 
 <br>
