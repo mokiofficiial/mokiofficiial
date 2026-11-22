@@ -13,7 +13,7 @@ os.makedirs(A, exist_ok=True)
 YELLOW, YLINE, INK, CREAM, CLINE, RED, DRED, BROWN, MUTED, GREEN = (
     "#ecb61e", "#e2a912", "#141414", "#fdf6e8", "#efe3cc", "#ee5a44", "#d9443a", "#5e3a1e", "#7a6250", "#7a8b3e")
 import base64  # noqa: E402
-from sprite import svg_rects  # noqa: E402
+from sprite import svg_rects, SW, SH  # noqa: E402
 MONO = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
 
 # 5x5 block font
@@ -234,7 +234,7 @@ def card(slug, title, glyph, lines, tags, accent):
 def footer():
     W, H = 1200, 150
     _, end = text_blocks("THANKS FOR VISITING", 0, 0, 5, INK)
-    total = end + 40 + 24 * 5
+    total = end + 40 + SW * 2
     x0 = (W - total) // 2
     t, end = text_blocks("THANKS FOR VISITING", x0, 63, 5, INK)
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Thanks for visiting">
@@ -243,7 +243,7 @@ def footer():
 {grid(W, H, 30)}
 <rect x="6" y="6" width="{W - 12}" height="{H - 12}" fill="none" stroke="{INK}" stroke-width="4"/>
 {t}
-<g transform="translate({end + 40} 20)"><g class="bob">{svg_rects(0, 0, 5)}</g></g>
+<g transform="translate({end + 40} {(H - SH * 2) // 2})"><g class="bob">{svg_rects(0, 0, 2)}</g></g>
 </svg>'''
     open(os.path.join(A, "footer.svg"), "w", encoding="utf-8").write(svg)
 

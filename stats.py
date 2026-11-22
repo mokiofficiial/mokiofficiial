@@ -11,7 +11,7 @@ import os
 import urllib.request
 
 from gen import A, CREAM, CLINE, INK, MUTED, MONO, RED, BROWN, YELLOW, DRED, grid, text_blocks, ANIM
-from sprite import svg_rects
+from sprite import svg_rects, SH
 
 USER = "mokiofficiial"
 SKIP = {USER}                      # the profile repo itself is not a project
@@ -107,13 +107,13 @@ def says_svg():
     W, H = 1200, 170
     line = LINES[dt.date.today().toordinal() % len(LINES)]
     bw = 70 + len(line) * 13
-    bx = 210
+    bx = 190
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Moki says: {line}">
 {ANIM}
 <rect width="{W}" height="{H}" fill="{YELLOW}"/>
 {grid(W, H, 30)}
 <rect x="6" y="6" width="{W - 12}" height="{H - 12}" fill="none" stroke="{INK}" stroke-width="4"/>
-<g transform="translate(50 25)"><g class="bob">{svg_rects(0, 0, 5)}</g></g>
+<g transform="translate(40 {(H - SH * 2) // 2})"><g class="bob">{svg_rects(0, 0, 2)}</g></g>
 <rect x="{bx}" y="40" width="{bw}" height="74" fill="{CREAM}" stroke="{INK}" stroke-width="4"/>
 <rect x="{bx - 12}" y="74" width="12" height="8" fill="{INK}"/>
 <rect x="{bx - 22}" y="82" width="10" height="8" fill="{INK}"/>
