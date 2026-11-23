@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="170" viewBox="0 0 1200 170" role="img" aria-label="Moki says: Create before claiming.">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="170" viewBox="0 0 1200 170" role="img" aria-label="Moki says: Small steps, every day.">
 <style>
 .b{opacity:0;animation:pop .35s steps(2) forwards}
 .bob{animation:bob 2.4s steps(2) infinite}
@@ -16,6 +16,6 @@
 <rect x="178" y="74" width="12" height="8" fill="#141414"/>
 <rect x="168" y="82" width="10" height="8" fill="#141414"/>
 <text x="218" y="70" fill="#d9443a" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13" font-weight="700" letter-spacing="2">MOKI SAYS</text>
-<text x="218" y="96" fill="#141414" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="21">Create before claiming.</text>
+<text x="218" y="96" fill="#141414" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="21">Small steps, every day.</text>
 <rect x="512" y="80" width="10" height="20" fill="#d9443a" class="cur"/>
 </svg>
